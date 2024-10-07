@@ -1,33 +1,8 @@
 // const { json } = require("react-router-dom");
-//const { pool } = require('../../config/database')
-//const { getAllTeam } = require('../../services/CRUDTeam')
-//const { getTeam } = require('../../controllers/homeControlller')
-//rider MotoGp
+
+//rider
 document.addEventListener("DOMContentLoaded", function () {
   const riders = [
-    {
-      riderTitle: "Official",
-      backgroundName: "FB1",
-      riderImg:
-        "https://resources.motogp.pulselive.com/photo-resources/2024/02/19/3a568eee-1e12-4091-b120-f53c71cbe8f6/rider-bio_francescobagnaia.png?height=400&width=600",
-      riderHashtag: "#FB1",
-      firstName: "Francesco",
-      lastName: "Bagnaia",
-      flagImg: "https://static-files.motogp.pulselive.com/assets/flags/it.svg",
-      countryName: "Italy",
-      teamName: "Ducati Lenovo Team",
-      currentPos: 2,
-      currentPoint: 329,
-      currentVic: 7,
-      teammateImg:
-        "https://resources.motogp.pulselive.com/photo-resources/2024/02/19/ca002749-a487-432f-879e-e44969678daa/rider-bio_eneabastianini.png?height=300&width=200",
-      teammateName: "Enea Bastianini",
-      totalWorldCham: 3,
-      totalVic: 35,
-      totalPod: 69,
-      totalPole: 28,
-      totalRace: 206,
-    },
     {
       riderTitle: "Official",
       backgroundName: "FB1",
@@ -200,15 +175,13 @@ document.addEventListener("DOMContentLoaded", function () {
       //luu thong tin vao localStorage
       localStorage.setItem("riderDetails", JSON.stringify(rider));
       //chuyen huong den trang rider-detail
-      window.location.href = "/rider-detail";
+      window.location.href = "rider-detail.html";
     });
 
     riderList.appendChild(link);
   });
 });
 
-
-// Rider moto2
 document.addEventListener("DOMContentLoaded", function () {
   const rider2 = [
     {
@@ -386,13 +359,13 @@ document.addEventListener("DOMContentLoaded", function () {
       //luu thong tin vao localStorage
       localStorage.setItem("riderDetails", JSON.stringify(rider));
       //chuyen huong den trang rider-detail
-      window.location.href = "/rider-detail";
+      window.location.href = "rider-detail.html";
     });
 
     riderList2.appendChild(link);
   });
 });
-// Rider moto3
+
 document.addEventListener("DOMContentLoaded", function () {
   const rider3 = [
     {
@@ -570,13 +543,13 @@ document.addEventListener("DOMContentLoaded", function () {
       //luu thong tin vao localStorage
       localStorage.setItem("riderDetails", JSON.stringify(rider));
       //chuyen huong den trang rider-detail
-      window.location.href = "/rider-detail";
+      window.location.href = "rider-detail.html";
     });
 
     riderList3.appendChild(link);
   });
 });
-//rider motoE
+
 document.addEventListener("DOMContentLoaded", function () {
   const rider4 = [
     {
@@ -753,27 +726,28 @@ document.addEventListener("DOMContentLoaded", function () {
       //luu thong tin vao localStorage
       localStorage.setItem("riderDetails", JSON.stringify(rider));
       //chuyen huong den trang rider-detail
-      window.location.href = "/rider-detail";
+      window.location.href = "rider-detail.html";
     });
 
     riderList4.appendChild(link);
   });
 });
 
-//team gp
-document.addEventListener("DOMContentLoaded", async function () {
-  const team = [
-    {
-      backgroundName: "Aprilia Racing",
-      motoImg:
-        "https://resources.motogp.pulselive.com/photo-resources/2024/02/22/769d87f4-f78b-41f1-8ac4-ac81a1c9c9b4/RLflGJDj.png?width=400",
-      teamName: "Aprilia Racing",
-      riderName1: "Maverick Viñales",
-      riderName2: "Aleix Espargaro",
-    },
-  ];
+//team
+document.addEventListener("DOMContentLoaded", function () {
+  fetch('http://localhost:3000/rider-team')
+    .then(response => response.json())
+    .then(data => {
+      products = data; // Lưu dữ liệu vào biến
+      isLoading = false;
+      renderTable(); // Render bảng với dữ liệu ban đầu
+      renderPagination(); // Tạo các nút phân trang
+    })
+    .catch(error => {
+      console.error('Lỗi khi gọi API:', error);
+    });
+  const team = data;
 
-  //const team = JSON.stringify(getTeam());
   const teamList = document.getElementById("teamList");
   teamList.innerHTML = "";
   team.forEach((team) => {
@@ -914,7 +888,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     teamList.appendChild(link);
   });
 });
-//Moto 2 team
+
 document.addEventListener("DOMContentLoaded", function () {
   const team2 = [
     {
@@ -1068,8 +1042,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-// Moto3 Team
 document.addEventListener("DOMContentLoaded", function () {
   const team3 = [
     {
@@ -1222,7 +1194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     teamList3.appendChild(link);
   });
 });
-//MotoE team
+
 document.addEventListener("DOMContentLoaded", function () {
   const team4 = [
     {

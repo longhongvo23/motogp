@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/rider-team.css" />
-
+  <link rel="stylesheet" href="../public/css/main.css" />
+  <link rel="stylesheet" href="../public/css/rider-team.css" />
+  <link rel="stylesheet" href="../public/css/rider-detail.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Rider - team</title>
+  <title>rider details</title>
 </head>
 
 <body>
@@ -104,132 +104,8 @@
       </div>
     </div>
   </header>
-
   <main id="main-content">
-    <div class="default-template">
-      <div class="rider-header">
-        <div class="rider-header__header">
-          <div class="page-header">
-            <div class="page-header__container page-header__container--left">
-              <h1 class="page-header__title">Riders & Teams</h1>
-            </div>
-          </div>
-        </div>
-        <div class="rider-header__search">
-          <div class="rider-search">
-            <button class="rider-search__button"></button>
-          </div>
-        </div>
-      </div>
-      <div class="tabs-header">
-        <nav class="tabs widget-outer-spacing">
-          <ul class="tabs__list tabs__list--center">
-            <li class="tabs__item">
-              <a class="tabs__link is-active" onclick="showSection('rider', this); return false;">
-                <span class="tabs__link-text"> Riders </span>
-              </a>
-            </li>
-            <li class="tabs__item">
-              <a class="tabs__link" onclick="showSection('team', this); return false;">
-                <span class="tabs__link-text"> Teams </span>
-              </a>
-            </li>
-            <li class="tabs__item">
-              <a class="tabs__link" onclick="showSection('legend', this); return false;">
-                <span class="tabs__link-text"> Legends </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div id="rider" class="rider-grid__container in-active active">
-        <div class="rider-grid__menu-container">
-          <button class="rider-grid__menu-item active-rider-btn" onclick="showRider('moto1', this)">
-            MotoGP™
-          </button>
-          <button class="rider-grid__menu-item" onclick="showRider('moto2', this)">
-            Moto2™
-          </button>
-          <button class="rider-grid__menu-item" onclick="showRider('moto3', this)">
-            Moto3™
-          </button>
-          <button class="rider-grid__menu-item" onclick="showRider('motoe', this)">
-            MotoE™
-          </button>
-        </div>
-
-        <div id="moto1" class="rider-grid__motogp in-active-rider active-rider">
-          <div class="rider-grid__supplier"></div>
-          <div id="riderList" class="rider-list__container"></div>
-        </div>
-
-
-        <div id="moto2" class="in-active-rider">
-          <div class="rider-grid__supplier">
-            <div class="engine-supplier">
-              <div class="engine-supplier__title">
-                Moto2™ EXCLUSIVE ENGINE SUPPLIER
-              </div>
-              <a class="engine-supplier__logo">
-                <div class="u-observed lazy-image-wrapper">
-                  <picture class="picture">
-                    <img class="img engine-supplier__img picture__img"
-                      src="https://resources.motogp.pulselive.com/photo-resources/2024/06/14/c4c45ce9-9eb2-4fd4-8671-2a1785e3592f/Triumph_Logo.png?height=120&width=120"
-                      alt="Triumph_Logo" />
-                  </picture>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="rider-grid__moto2">
-            <div id="riderList2" class="rider-list__container"></div>
-          </div>
-        </div>
-        <div id="moto3" class="in-active-rider">
-          <div class="rider-grid__supplier"></div>
-          <div class="rider-grid__moto3">
-            <div id="riderList3" class="rider-list__container"></div>
-          </div>
-        </div>
-        <div id="motoe" class="in-active-rider">
-          <div class="rider-grid__supplier"></div>
-          <div class="rider-grid__motoe">
-            <div id="riderList4" class="rider-list__container"></div>
-          </div>
-        </div>
-      </div>
-      <div id="team" class="teams-grid__container in-active">
-        <div class="teams-grid__title">Teams</div>
-        <div class="teams-grid__menu-container">
-          <button class="teams-grid__menu-item active-rider-btn" onclick="showTeam('team-moto1', this)">
-            MotoGP™
-          </button>
-          <button class="teams-grid__menu-item" onclick="showTeam('team-moto2', this)">
-            Moto2™
-          </button>
-          <button class="teams-grid__menu-item" onclick="showTeam('team-moto3', this)">
-            Moto3™</button><button class="teams-grid__menu-item" onclick="showTeam('team-motoe', this)">
-            MotoE™
-          </button>
-        </div>
-
-        <div id="team-moto1" class="teams-grid__motogp in-active-rider active-rider">
-          <div id="teamList" class="teams-list__container"></div>
-        </div>
-        <div id="team-moto2" class="in-active-rider">
-          <div id="teamList2" class="teams-list__container"></div>
-        </div>
-        <div id="team-moto3" class="in-active-rider">
-          <div id="teamList3" class="teams-list__container"></div>
-        </div>
-        <div id="team-motoe" class="in-active-rider">
-          <div id="teamList4" class="teams-list__container"></div>
-        </div>
-      </div>
-      <div id="legend" class="rider-grid__container in-active">
-        <div class="rider-grid__title">Legends</div>
-      </div>
-    </div>
+    <div id="riderDetails" class="default-template"></div>
   </main>
 
   <footer class="footer">
@@ -432,83 +308,42 @@
       <div class="footer__copyright">© 2024 nhom 3</div>
     </div>
   </footer>
+
+  <script src="rider-detail.js"></script>
   <script>
-    function showSection(sectionId, link) {
-      const sections = document.querySelectorAll(".in-active");
-      sections.forEach((section) => {
-        section.classList.remove("active");
-      });
-
-      const activeSection = document.getElementById(sectionId);
-      activeSection.classList.add("active");
-
-      const links = document.querySelectorAll(".tabs__link");
-      links.forEach((l) => {
-        l.classList.remove("is-active");
-      });
-      link.classList.add("is-active");
-    }
-
-    function showRider(riderId, button) {
-      //an tat ca cac muc
-      const inActive = document.querySelectorAll(".in-active-rider");
-      inActive.forEach((inActive) => {
-        inActive.classList.remove("active-rider");
-      });
-      //hien thi muc duoc chon
-      const active = document.getElementById(riderId);
-      active.classList.add("active-rider");
-
-      //doi nut thanh mau do
-      const riderBtn = document.querySelectorAll(".rider-grid__menu-item");
-      riderBtn.forEach((btn) => {
-        btn.classList.remove("active-rider-btn");
-      });
-      button.classList.add("active-rider-btn");
-    }
-
-    function showTeam(teamId, button) {
-      //an tat ca cac muc
-      const inActive = document.querySelectorAll(".in-active-rider");
-      inActive.forEach((inActive) => {
-        inActive.classList.remove("active-rider");
-      });
-      //hien thi muc duoc chon
-      const active = document.getElementById(teamId);
-      active.classList.add("active-rider");
-
-      //doi nut thanh mau do
-      const teamBtn = document.querySelectorAll(".teams-grid__menu-item");
-      teamBtn.forEach((btn) => {
-        btn.classList.remove("active-rider-btn");
-      });
-      button.classList.add("active-rider-btn");
-    }
-
     //chuyen trang
     document
       .getElementById("navigateBtnCalendar")
       .addEventListener("click", function () {
-        window.location.href = "/calendar";
+        window.location.href = "calendar.html";
       });
     document
       .getElementById("navigateBtnResults&Standings")
       .addEventListener("click", function () {
-        window.location.href = "/result-standing";
+        window.location.href = "result-standing.html";
       });
     document
       .getElementById("navigateBtnRiders&Teams")
       .addEventListener("click", function () {
-        window.location.href = "/rider-team";
+        window.location.href = "rider-team.html";
       });
-
     document
       .getElementById("navigateBtnHomePage")
       .addEventListener("click", function () {
-        window.location.href = "/index";
+        window.location.href = "index.html";
+      });
+
+    document
+      .getElementById("backRiderBtn")
+      .addEventListener("click", function () {
+        window.location.href = "rider-team.html";
+      });
+    document
+      .getElementById("backResultStandingBtn")
+      .addEventListener("click", function () {
+        window.location.href = "result-standing.html";
       });
   </script>
-  <script src="js/rider-team.js"></script>
 </body>
 
 </html>

@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/result-standing.css" />
+  <link rel="stylesheet" href="../public/css/main.css" />
+  <link rel="stylesheet" href="../public/css/rider-team.css" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>results & standings</title>
+  <title>Rider - team</title>
 </head>
 
 <body>
@@ -103,259 +104,128 @@
       </div>
     </div>
   </header>
+
   <main id="main-content">
     <div class="default-template">
+      <div class="rider-header">
+        <div class="rider-header__header">
+          <div class="page-header">
+            <div class="page-header__container page-header__container--left">
+              <h1 class="page-header__title">Riders & Teams</h1>
+            </div>
+          </div>
+        </div>
+        <div class="rider-header__search">
+          <div class="rider-search">
+            <button class="rider-search__button"></button>
+          </div>
+        </div>
+      </div>
       <div class="tabs-header">
         <nav class="tabs widget-outer-spacing">
           <ul class="tabs__list tabs__list--center">
             <li class="tabs__item">
-              <a class="tabs__link is-active" onclick="showSection('Results', this); return false;">
-                <span class="tabs__link-text"> Results </span>
+              <a class="tabs__link is-active" onclick="showSection('rider', this); return false;">
+                <span class="tabs__link-text"> Riders </span>
               </a>
             </li>
             <li class="tabs__item">
-              <a class="tabs__link" onclick="showSection('Standings', this); return false;">
-                <span class="tabs__link-text"> Standings </span>
+              <a class="tabs__link" onclick="showSection('team', this); return false;">
+                <span class="tabs__link-text"> Teams </span>
               </a>
             </li>
             <li class="tabs__item">
-              <a class="tabs__link" onclick="showSection('Records', this); return false;">
-                <span class="tabs__link-text">Records</span>
+              <a class="tabs__link" onclick="showSection('legend', this); return false;">
+                <span class="tabs__link-text"> Legends </span>
               </a>
             </li>
           </ul>
         </nav>
       </div>
-      <div id="Results" class="results in-active active">
-        <div class="results__container">
-          <div class="primary-filter">
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Year</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--year">
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-              </select>
-            </div>
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Type</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--type">
-                <option value="GP">Grands Prix</option>
-                <option value="ALL">All Events</option>
-              </select>
-            </div>
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Event</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--event">
-                <option value="event1">MISANO MOTOGP™ OFFICIAL TEST</option>
-                <option value="event2">
-                  GRAN PREMIO DI SAN MARINO E DELLA RIVIERA DI RIMINI
-                </option>
-                <option value="event3">GRAN PREMIO DE ARAGÓN</option>
-                <option value="event4">
-                  SPIELBERG MOTO2™ & MOTO3™ OFFICIAL TEST
-                </option>
-                <option value="event5">
-                  MOTORRAD GRAND PRIX VON ÖSTERREICH
-                </option>
-              </select>
-            </div>
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Category</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--cat">
-                <option value="motogp">MotoGP™</option>
-                <option value="moto2">Moto2™</option>
-                <option value="moto3">Moto3™</option>
-                <option value="motoe">MotoE™</option>
-              </select>
-            </div>
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Session</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--cat">
-                <option value="rac">RAC</option>
-                <option value="wup">WUP</option>
-                <option value="spr">SPR</option>
-                <option value="q2">Q2</option>
-                <option value="q1">Q1</option>
-                <option value="fp2">FP2</option>
-                <option value="pr">PR</option>
-                <option value="fp1">FP1</option>
-              </select>
-            </div>
-          </div>
-          <div class="results__hero-container">
-            <div class="results__hero-image">
-              <img alt="Gran Premio Red Bull di San Marino e della Riviera di Rimini"
-                src="https://photos.motogp.com/2024/events/background/RSM.png"
-                class="results__hero-image-img js-hero-image active" />
-            </div>
-            <div class="results__hero-text">
-              Gran Premio Red Bull di San Marino e della Riviera di Rimini
-              2024
-            </div>
-          </div>
+      <div id="rider" class="rider-grid__container in-active active">
+        <div class="rider-grid__menu-container">
+          <button class="rider-grid__menu-item active-rider-btn" onclick="showRider('moto1', this)">
+            MotoGP™
+          </button>
+          <button class="rider-grid__menu-item" onclick="showRider('moto2', this)">
+            Moto2™
+          </button>
+          <button class="rider-grid__menu-item" onclick="showRider('moto3', this)">
+            Moto3™
+          </button>
+          <button class="rider-grid__menu-item" onclick="showRider('motoe', this)">
+            MotoE™
+          </button>
         </div>
-        <section class="results-table">
-          <div class="results-table__weather">
-            <div class="results-table__weather-column">
-              <i class="fa-solid fa-cloud-rain icon results-table__weather-icon" style="width: 100%"></i>
-            </div>
-            <div class="results-table__weather-column">
-              <span class="results-table__weather-header results-table__weather-header--cell">Light Rain</span>
-              <span class="results-table__weather-cell">30º</span>
-            </div>
-            <div class="results-table__weather-column">
-              <span class="results-table__weather-header">Track conditions</span>
-              <span class="results-table__weather-cell">Dry</span>
-            </div>
-            <div class="results-table__weather-column">
-              <span class="results-table__weather-header">Humidity</span>
-              <span class="results-table__weather-cell">51%</span>
-            </div>
-            <div class="results-table__weather-column">
-              <span class="results-table__weather-header">Ground</span>
-              <span class="results-table__weather-cell">30º</span>
-            </div>
-          </div>
-          <div class="results-table__table-wrapper">
-            <table class="results-table__table">
-              <thead>
-                <tr>
-                  <th class="results-table__header-cell results-table__header-cell--pos u-hide-tablet">
-                    pos.
-                  </th>
-                  <th class="results-table__header-cell results-table__header-cell--points u-hide-tablet">
-                    pts
-                  </th>
-                  <th class="results-table__header-cell results-table__header-cell--rider">
-                    rider
-                  </th>
-                  <th class="results-table__header-cell results-table__header-cell--team u-hide-tablet">
-                    Team
-                  </th>
-                  <th class="results-table__header-cell results-table__header-cell--time">
-                    time / gap
-                  </th>
-                </tr>
-              </thead>
-              <tbody id="resultList"></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-      <div id="Standings" class="standings-table in-active">
-        <div class="standings__container">
-          <div class="primary-filter">
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Year</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--year">
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-              </select>
-            </div>
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Championship</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--championship">
-                <option value="championship-standings">
-                  Riders' Championship
-                </option>
-                <option value="team-standings">Teams' Championship</option>
-                <option value="constructor-standings">
-                  Constructors' Championship
-                </option>
-                <option value="bmw-award">BMW M Award</option>
-              </select>
-            </div>
-          </div>
-          <div class="standings__hero-container">
-            <div class="standings__hero-image">
-              <div class="standings-image-container">
-                <div class="standings-image">
-                  <div class="u-observed lazy-image-wrapper">
-                    <picture class="object-fit-cover-picture">
-                      <source srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=300&width=425 1x,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=600&width=850 2x
-                          " media="(max-width: 425px)" />
-                      <source srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=300&width=768  1x,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=600&width=1536 2x
-                          " media="(max-width: 768px)" />
-                      <source srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=300&width=1440 1x,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=600&width=2880 2x
-                          " media="(max-width: 1440px)" />
-                      <img
-                        src="https://resources.motogp.pulselive.com/photo-resources/2023/06/23/c094c164-18eb-42cc-9d8c-4626a857ff41/riders-championship-hero.jpg?height=300&width=1440"
-                        alt="riders-championship-hero" loading="lazy"
-                        class="img undefined picture__img object-fit-cover-picture__img" />
-                    </picture>
-                  </div>
-                </div>
+
+        <div id="moto1" class="rider-grid__motogp in-active-rider active-rider">
+          <div class="rider-grid__supplier"></div>
+          <div id="riderList" class="rider-list__container"></div>
+        </div>
+        <div id="moto2" class="in-active-rider">
+          <div class="rider-grid__supplier">
+            <div class="engine-supplier">
+              <div class="engine-supplier__title">
+                Moto2™ EXCLUSIVE ENGINE SUPPLIER
               </div>
+              <a class="engine-supplier__logo">
+                <div class="u-observed lazy-image-wrapper">
+                  <picture class="picture">
+                    <img class="img engine-supplier__img picture__img"
+                      src="https://resources.motogp.pulselive.com/photo-resources/2024/06/14/c4c45ce9-9eb2-4fd4-8671-2a1785e3592f/Triumph_Logo.png?height=120&width=120"
+                      alt="Triumph_Logo" />
+                  </picture>
+                </div>
+              </a>
             </div>
-            <div class="standings__hero-text">
-              Championship Standings 2024
-            </div>
+          </div>
+          <div class="rider-grid__moto2">
+            <div id="riderList2" class="rider-list__container"></div>
           </div>
         </div>
-        <div class="standings-table__table-wrapper">
-          <div class="primary-filter secondary-filter">
-            <div class="primary-filter__filter-container">
-              <div class="primary-filter__filter-label">Category</div>
-              <select class="primary-filter__filter-select primary-filter__filter-select--cat">
-                <option value="motogp">MotoGP™</option>
-                <option value="moto2">Moto2™</option>
-                <option value="moto3">Moto3™</option>
-                <option value="motoe">MotoE™</option>
-              </select>
-            </div>
+        <div id="moto3" class="in-active-rider">
+          <div class="rider-grid__supplier"></div>
+          <div class="rider-grid__moto3">
+            <div id="riderList3" class="rider-list__container"></div>
           </div>
-          <div>
-            <div>
-              <table class="standings-table__table">
-                <thead>
-                  <tr>
-                    <th class="standings-table__header-cell standings-table__header-cell--pos">
-                      pos.
-                    </th>
-                    <th class="standings-table__header-cell standings-table__header-cell--rider u-hide-tablet">
-                      rider
-                    </th>
-                    <th class="standings-table__header-cell standings-table__header-cell--team u-hide-tablet">
-                      Team
-                    </th>
-                    <th class="standings-table__header-cell standings-table__header-cell--points u-hide-phablet">
-                      points
-                    </th>
-                  </tr>
-                </thead>
-                <tbody id="standingList">
-                  <!-- <span
-                      class="standings-table__position-gradient"
-                      style="
-                        background: linear-gradient(
-                          90deg,
-                          rgb(23, 28, 33) 0%,
-                          rgb(130, 52, 194) 100%
-                        );
-                      "
-                    ></span> -->
-                </tbody>
-              </table>
-            </div>
+        </div>
+        <div id="motoe" class="in-active-rider">
+          <div class="rider-grid__supplier"></div>
+          <div class="rider-grid__motoe">
+            <div id="riderList4" class="rider-list__container"></div>
           </div>
         </div>
       </div>
-      <div id="Records" class="faqs in-active">
-        <div class="faqs__container">
-          <h2 class="faqs__title">Circuit Records</h2>
+      <div id="team" class="teams-grid__container in-active">
+        <div class="teams-grid__title">Teams</div>
+        <div class="teams-grid__menu-container">
+          <button class="teams-grid__menu-item active-rider-btn" onclick="showTeam('team-moto1', this)">
+            MotoGP™
+          </button>
+          <button class="teams-grid__menu-item" onclick="showTeam('team-moto2', this)">
+            Moto2™
+          </button>
+          <button class="teams-grid__menu-item" onclick="showTeam('team-moto3', this)">
+            Moto3™</button><button class="teams-grid__menu-item" onclick="showTeam('team-motoe', this)">
+            MotoE™
+          </button>
         </div>
+
+        <div id="team-moto1" class="teams-grid__motogp in-active-rider active-rider">
+          <div id="teamList" class="teams-list__container"></div>
+        </div>
+        <div id="team-moto2" class="in-active-rider">
+          <div id="teamList2" class="teams-list__container"></div>
+        </div>
+        <div id="team-moto3" class="in-active-rider">
+          <div id="teamList3" class="teams-list__container"></div>
+        </div>
+        <div id="team-motoe" class="in-active-rider">
+          <div id="teamList4" class="teams-list__container"></div>
+        </div>
+      </div>
+      <div id="legend" class="rider-grid__container in-active">
+        <div class="rider-grid__title">Legends</div>
       </div>
     </div>
   </main>
@@ -560,20 +430,17 @@
       <div class="footer__copyright">© 2024 nhom 3</div>
     </div>
   </footer>
-  <script src="/js/result-standing.js"></script>
+
   <script>
     function showSection(sectionId, link) {
-      //an tat ca cac muc
       const sections = document.querySelectorAll(".in-active");
       sections.forEach((section) => {
         section.classList.remove("active");
       });
 
-      //hien thi muc duoc chon
       const activeSection = document.getElementById(sectionId);
       activeSection.classList.add("active");
 
-      //doi mau lien ket thanh mau do
       const links = document.querySelectorAll(".tabs__link");
       links.forEach((l) => {
         l.classList.remove("is-active");
@@ -581,28 +448,66 @@
       link.classList.add("is-active");
     }
 
+    function showRider(riderId, button) {
+      //an tat ca cac muc
+      const inActive = document.querySelectorAll(".in-active-rider");
+      inActive.forEach((inActive) => {
+        inActive.classList.remove("active-rider");
+      });
+      //hien thi muc duoc chon
+      const active = document.getElementById(riderId);
+      active.classList.add("active-rider");
+
+      //doi nut thanh mau do
+      const riderBtn = document.querySelectorAll(".rider-grid__menu-item");
+      riderBtn.forEach((btn) => {
+        btn.classList.remove("active-rider-btn");
+      });
+      button.classList.add("active-rider-btn");
+    }
+
+    function showTeam(teamId, button) {
+      //an tat ca cac muc
+      const inActive = document.querySelectorAll(".in-active-rider");
+      inActive.forEach((inActive) => {
+        inActive.classList.remove("active-rider");
+      });
+      //hien thi muc duoc chon
+      const active = document.getElementById(teamId);
+      active.classList.add("active-rider");
+
+      //doi nut thanh mau do
+      const teamBtn = document.querySelectorAll(".teams-grid__menu-item");
+      teamBtn.forEach((btn) => {
+        btn.classList.remove("active-rider-btn");
+      });
+      button.classList.add("active-rider-btn");
+    }
+
     //chuyen trang
     document
       .getElementById("navigateBtnCalendar")
       .addEventListener("click", function () {
-        window.location.href = "/calendar";
+        window.location.href = "calendar.html";
       });
     document
       .getElementById("navigateBtnResults&Standings")
       .addEventListener("click", function () {
-        window.location.href = "/result-standing";
+        window.location.href = "result-standing.html";
       });
     document
       .getElementById("navigateBtnRiders&Teams")
       .addEventListener("click", function () {
-        window.location.href = "/rider-team";
+        window.location.href = "rider-team.html";
       });
+
     document
       .getElementById("navigateBtnHomePage")
       .addEventListener("click", function () {
-        window.location.href = "/index";
+        window.location.href = "index.html";
       });
   </script>
+  <script src="rider-team.js"></script>
 </body>
 
 </html>
