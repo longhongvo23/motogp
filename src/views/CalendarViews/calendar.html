@@ -1,71 +1,94 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../public/css/main.css" />
-    <link rel="stylesheet" href="../../public/css/rider-team.css" />
-
+    <link rel="stylesheet" href="../../public/css/calender.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Team - moto MotoGP™</title>
+    <title>Calendar</title>
 </head>
 
 <body>
-    <!--Main nav-->
     <script src="../mainnavbar.js"></script>
-    <!--In ra danh sach-->
-    <!--Rider, Team, Legend-->
-    <div class="tabs-header">
-        <nav class="tabs widget-outer-spacing">
-            <ul class="tabs__list tabs__list--center">
-                <li class="tabs__item">
-                    <a class="tabs__link" href="/src/views/RiderViews/riders.html">
-                        <span class="tabs__link-text"> Riders </span>
-                    </a>
-                </li>
-                <li class="tabs__item">
-                    <a class="tabs__link is-active" href="/src/views/TeamViews/teams.html">
-                        <span class="tabs__link-text"> Teams </span>
-                    </a>
-                </li>
-                <li class="tabs__item">
-                    <a class="tabs__link" onclick="showSection('legend', this); return false;">
-                        <span class="tabs__link-text"> Legends </span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
 
-    <!--Main-->
-    <div id="team" class="teams-grid__container active">
-        <div class="teams-grid__title">Teams</div>
-        <!--Type-->
-        <div class="rider-grid__menu-container">
-            <button class="rider-grid__menu-item active-rider-btn" onclick="showTeam('moto1', this)">
-                MotoGP™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto2', this)">
-                Moto2™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto3', this)">
-                Moto3™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('motoe', this)">
-                MotoE™
-            </button>
-        </div>
-        <div id="team-moto1" class="teams-grid__motogp active-rider">
-            <div id="teamList" class="teams-list__container">
-                <!-- Nội dung danh sách của bạn ở đây -->
+    <header class="calendar">
+        <div class="calendar__container">
+            <div class="calendar__header-container">
+                <div class="calendar__title-container">
+                    <h1 class="calendar__title">2024 Calendar</h1>
+                </div>
+                <div class="calendar__sponsor-container"></div>
+            </div>
+            <div class="calendar__submenu-container">
+                <ul class="calendar__submenu-list">
+                    <li class="calendar__submenu-item tickets">
+                        <a class="calendar__submenu-link external-link tickets">
+                            <svg class="icon"></svg>
+                            Tickets
+                            <svg class="arrow">
+                                <i class="fa-solid fa-play"></i>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="calendar__submenu-item hospitality">
+                        <a class="calendar__submenu-link external-link hospitality">
+                            <svg class="icon"></svg>
+                            Hospitality
+                            <svg class="arrow">
+                                <i class="fa-solid fa-play"></i>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="calendar__submenu-item experiences">
+                        <a class="calendar__submenu-link external-link experiences">
+                            <svg class="icon"></svg>
+                            Experiences
+                            <svg class="arrow">
+                                <i class="fa-solid fa-play"></i>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="calendar__featured-cta">
+                        <a class="calendar__featured-cta-link calendar__featured-cta-link--one">
+                            <i class="fa-regular fa-calendar" style="color: #ffffff"></i>
+
+                            Next GP
+                        </a>
+                    </li>
+                    <li class="calendar__featured-cta">
+                        <a class="calendar__featured-cta-link calendar__featured-cta-link--two">
+                            <i class="fa-solid fa-cloud-arrow-down" style="color: #ffffff"></i>
+                            Calendar Download</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!--Footer-->
+    <main id="main-content">
+        <div class="default-template">
+            <div class="calendar-listings__container">
+                <div class="calendar-listings__event-toggle">
+                    <button class="calendar-listings__event-toggle-btn active-btn"
+                        onclick="showCalendar('GrandPrix', this)">
+                        Grands Prix
+                    </button>
+                    <button class="calendar-listings__event-toggle-btn" onclick="showCalendar('AllEvents', this)">
+                        All Events
+                    </button>
+                </div>
+                <div class="wrap-calendar">
+                    <div id="GrandPrix" class="in-active active"></div>
+                    <div id="AllEvents" class="in-active"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__logo-container">
@@ -79,9 +102,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2024/05/09/74b76695-1cf4-4776-8a3a-e5e28a32b484/sponsor-qatar.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2024/05/09/74b76695-1cf4-4776-8a3a-e5e28a32b484/sponsor-qatar.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2024/05/09/74b76695-1cf4-4776-8a3a-e5e28a32b484/sponsor-qatar.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2024/05/09/74b76695-1cf4-4776-8a3a-e5e28a32b484/sponsor-qatar.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2024/05/09/74b76695-1cf4-4776-8a3a-e5e28a32b484/sponsor-qatar.png?width=100"
                                         alt="sponsor-qatar" />
@@ -93,9 +116,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2024/09/12/179ab216-720b-4b7c-bc32-c7579a8b1cc2/Tissot_Main_Sponsor.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2024/09/12/179ab216-720b-4b7c-bc32-c7579a8b1cc2/Tissot_Main_Sponsor.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2024/09/12/179ab216-720b-4b7c-bc32-c7579a8b1cc2/Tissot_Main_Sponsor.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2024/09/12/179ab216-720b-4b7c-bc32-c7579a8b1cc2/Tissot_Main_Sponsor.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2024/09/12/179ab216-720b-4b7c-bc32-c7579a8b1cc2/Tissot_Main_Sponsor.png?width=100"
                                         alt="Tissot_Main_Sponsor" />
@@ -107,9 +130,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/03/27/6499fb7c-58c7-4e12-b107-98156ed85931/MICHELIN_logo.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/03/27/6499fb7c-58c7-4e12-b107-98156ed85931/MICHELIN_logo.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2023/03/27/6499fb7c-58c7-4e12-b107-98156ed85931/MICHELIN_logo.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2023/03/27/6499fb7c-58c7-4e12-b107-98156ed85931/MICHELIN_logo.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2023/03/27/6499fb7c-58c7-4e12-b107-98156ed85931/MICHELIN_logo.png?width=100"
                                         alt="MICHELIN_logo" />
@@ -121,9 +144,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/10/25/f0612155-0f76-452f-9db8-348c37fdd01b/BMW-M_logo.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/10/25/f0612155-0f76-452f-9db8-348c37fdd01b/BMW-M_logo.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2023/10/25/f0612155-0f76-452f-9db8-348c37fdd01b/BMW-M_logo.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2023/10/25/f0612155-0f76-452f-9db8-348c37fdd01b/BMW-M_logo.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2023/10/25/f0612155-0f76-452f-9db8-348c37fdd01b/BMW-M_logo.png?width=100"
                                         alt="BMW-M_logo" />
@@ -135,9 +158,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/04/17/8a22cccc-b9e4-4b80-8a78-da85a042adf2/EstrellaGalicia_Logo.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/04/17/8a22cccc-b9e4-4b80-8a78-da85a042adf2/EstrellaGalicia_Logo.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2023/04/17/8a22cccc-b9e4-4b80-8a78-da85a042adf2/EstrellaGalicia_Logo.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2023/04/17/8a22cccc-b9e4-4b80-8a78-da85a042adf2/EstrellaGalicia_Logo.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2023/04/17/8a22cccc-b9e4-4b80-8a78-da85a042adf2/EstrellaGalicia_Logo.png?width=100"
                                         alt="EstrellaGalicia_Logo" />
@@ -149,9 +172,9 @@
                             <div class="js-lazy-load u-observed lazy-image-wrapper is-loaded">
                                 <picture class="picture">
                                     <source class="" srcset="
-                            https://resources.motogp.pulselive.com/photo-resources/2023/03/27/ef2af200-beec-45b5-bfac-0e9b453ad4ed/DHL_logo.png?width=100,
-                            https://resources.motogp.pulselive.com/photo-resources/2023/03/27/ef2af200-beec-45b5-bfac-0e9b453ad4ed/DHL_logo.png?width=200 2x
-                          " media="(min-width: 0px)" />
+                        https://resources.motogp.pulselive.com/photo-resources/2023/03/27/ef2af200-beec-45b5-bfac-0e9b453ad4ed/DHL_logo.png?width=100,
+                        https://resources.motogp.pulselive.com/photo-resources/2023/03/27/ef2af200-beec-45b5-bfac-0e9b453ad4ed/DHL_logo.png?width=200 2x
+                      " media="(min-width: 0px)" />
                                     <img class="js-faded-image fade-in-on-load picture__img is-loaded"
                                         src="https://resources.motogp.pulselive.com/photo-resources/2023/03/27/ef2af200-beec-45b5-bfac-0e9b453ad4ed/DHL_logo.png?width=100"
                                         alt="DHL_logo" />
@@ -266,8 +289,7 @@
             <div class="footer__copyright">© 2024 nhom 3</div>
         </div>
     </footer>
-    <!--Script-->
-    <script src="teams.js"></script>
+    <script src="calendar.js" defer></script>
 </body>
 
 </html>

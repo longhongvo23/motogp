@@ -1,23 +1,28 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #161616;
   margin: 0;
 }
+
 main {
   display: block;
 }
+
 section,
 footer,
 header,
 nav {
   display: block;
 }
+
 table {
   border-collapse: collapse;
 }
+
 select {
   line-height: 2.6;
   background-repeat: no-repeat;
@@ -30,14 +35,17 @@ select {
   max-width: 80rem;
   text-transform: none;
 }
+
 button {
   border: none;
   cursor: pointer;
   text-transform: none;
 }
+
 img {
   border: 0;
 }
+
 h1,
 h3,
 h2,
@@ -45,9 +53,11 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 h1 {
   margin: 0.67em 0;
 }
+
 button {
   background-color: transparent;
   padding: 0;
@@ -57,17 +67,21 @@ button {
   font: inherit;
   margin: 0;
 }
+
 ul li {
   list-style-type: none;
 }
+
 ul {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
+
 a {
   background-color: transparent;
 }
+
 a:hover {
   outline: 0;
 }
@@ -102,11 +116,9 @@ a:hover {
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    background: radial-gradient(
-      96.8% 493.26% at 100% 93.41%,
-      rgba(254, 11, 7, 0.219) 0,
-      rgba(148, 4, 1, 0) 100%
-    );
+    background: radial-gradient(96.8% 493.26% at 100% 93.41%,
+        rgba(254, 11, 7, 0.219) 0,
+        rgba(148, 4, 1, 0) 100%);
     padding: 0;
   }
 }
@@ -152,6 +164,7 @@ a:hover {
     background-image: url(https://www.motogp.com/resources/v7.6.8/i/svg-files/elements/motogp-timingpass-logo-white.svg);
   }
 }
+
 .global-top-nav__link.timingpass {
   color: transparent;
   background-position: 50%;
@@ -164,6 +177,7 @@ a:hover {
     background-image: url(https://www.motogp.com/resources/v7.6.8/i/svg-files/elements/motogp-videopass-logo-white.svg);
   }
 }
+
 .global-top-nav__link.videopass {
   color: transparent;
   background-position: 50%;
@@ -186,6 +200,7 @@ a:hover {
     padding: 1rem 2.8rem;
   }
 }
+
 .global-top-nav__subscribe-btn {
   color: #fff;
   background-color: #de3023;
@@ -201,6 +216,7 @@ a:hover {
     align-items: center;
   }
 }
+
 @media (min-width: 52.5em) {
   .global-top-nav__fim::before {
     display: block;
@@ -243,16 +259,15 @@ a:hover {
     justify-content: flex-start;
   }
 }
+
 .main-nav__content {
   display: flex;
   align-items: center;
   width: 100vw;
   position: relative;
-  background: radial-gradient(
-    96.8% 493.26% at 100% 93.41%,
-    rgba(254, 11, 7, 0.219) 0,
-    rgba(148, 4, 1, 0) 100%
-  );
+  background: radial-gradient(96.8% 493.26% at 100% 93.41%,
+      rgba(254, 11, 7, 0.219) 0,
+      rgba(148, 4, 1, 0) 100%);
 }
 
 .main-nav__overlay-menu-btn {
@@ -262,6 +277,7 @@ a:hover {
   cursor: pointer;
   border: none;
 }
+
 .main-nav__overlay-menu-btn svg {
   width: 1.2rem;
   height: 0.8rem;
@@ -276,6 +292,7 @@ a:hover {
     transform: none;
   }
 }
+
 .main-nav__logo-75 {
   background-image: url(https://www.motogp.com/resources/v7.6.8/i/svg-files/elements/motogp-logo-75.svg);
   display: block;
@@ -326,6 +343,7 @@ a:hover {
     align-items: center;
   }
 }
+
 @media (min-width: 52.5em) {
   .main-nav__link:hover {
     background-color: #de3023;
@@ -341,6 +359,7 @@ a:hover {
     margin-left: auto;
   }
 }
+
 @media (min-width: 52.5em) {
   .sso::after {
     font-size: 1.6rem;
@@ -355,12 +374,14 @@ a:hover {
     display: block;
   }
 }
+
 @media (min-width: 52.5em) {
   .sso__login-btn {
     font-size: 1.6rem;
     color: #fff;
   }
 }
+
 .sso__login-btn {
   white-space: nowrap;
   text-decoration: none;
@@ -374,6 +395,7 @@ a:hover {
     order: 3;
   }
 }
+
 .sso__register-btn {
   white-space: nowrap;
   display: flex;
@@ -386,6 +408,7 @@ a:hover {
     display: block;
   }
 }
+
 .sso__register-btn-text--bold {
   font-weight: 700;
 }
@@ -395,6 +418,7 @@ a:hover {
     margin: 0 0 0 1rem;
   }
 }
+
 .sso__picture {
   display: flex;
   align-items: center;
@@ -410,10 +434,12 @@ a:hover {
     filter: invert(1);
   }
 }
+
 .icon {
   display: block;
   fill: #000;
 }
+
 .default-template {
   background: #f4f4f4;
 }
@@ -430,6 +456,7 @@ a:hover {
     background-color: transparent;
   }
 }
+
 @media (min-width: 52.5em) {
   .content-hero__header {
     font-size: 5.2rem;
@@ -438,6 +465,7 @@ a:hover {
     padding: 1.6rem 4.8rem;
   }
 }
+
 .content-hero__header {
   color: #fff;
   width: 100%;
@@ -448,6 +476,7 @@ a:hover {
     height: 81.2rem;
   }
 }
+
 .content-hero__container {
   display: flex;
   flex-flow: column;
@@ -464,6 +493,7 @@ a:hover {
     top: 0;
   }
 }
+
 .content-hero__background {
   display: flex;
   justify-content: center;
@@ -476,6 +506,7 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+
 .u-observed {
   min-width: 0.1rem;
   min-height: 0.1rem;
@@ -486,9 +517,11 @@ a:hover {
   height: 100%;
   object-fit: cover;
 }
+
 .fade-in-on-load.is-loaded {
   opacity: 1;
 }
+
 .picture__img {
   max-width: 100%;
 }
@@ -499,14 +532,12 @@ a:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      0deg,
-      #0a0101,
-      rgba(10, 1, 1, 0.75) 50%,
-      rgba(10, 1, 1, 0) 80%,
-      transparent 0,
-      #000 92%
-    );
+    background: linear-gradient(0deg,
+        #0a0101,
+        rgba(10, 1, 1, 0.75) 50%,
+        rgba(10, 1, 1, 0) 80%,
+        transparent 0,
+        #000 92%);
   }
 }
 
@@ -515,6 +546,7 @@ a:hover {
     bottom: 13.8rem;
   }
 }
+
 .content-hero__container-details {
   position: absolute;
   width: 100%;
@@ -538,6 +570,7 @@ a:hover {
     line-height: 3.2rem;
   }
 }
+
 .content-hero__motogp-news {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: -0.04em;
@@ -551,6 +584,7 @@ a:hover {
     padding: 0 15rem;
   }
 }
+
 .content-hero__title {
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -561,6 +595,7 @@ a:hover {
     margin: 3.4rem 0 4.8rem;
   }
 }
+
 .content-hero__cta {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -581,6 +616,7 @@ a:hover {
   position: relative;
   padding: 0 4.8rem;
 }
+
 .slider {
   overflow-x: hidden;
 }
@@ -598,6 +634,7 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+
 .categories-rail__slider {
   padding-bottom: 0;
 }
@@ -605,12 +642,14 @@ a:hover {
 .slider__item .is-active {
   pointer-events: all;
 }
+
 @media (min-width: 64.0625em) {
   .categories-rail__item {
     height: 10rem;
     width: 17rem;
   }
 }
+
 .categories-rail__item {
   border-radius: 0.4rem;
   position: relative;
@@ -644,11 +683,13 @@ a:hover {
   background-image: url(../i/svg-files/elements/motogp-background-category-card.svg);
   background-repeat: no-repeat;
 }
+
 .categories-rail__background-container {
   position: absolute;
   inset: 0;
   background-color: #171c21;
 }
+
 .categories-rail__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
@@ -670,9 +711,10 @@ a:hover {
   }
 }
 
-.widget ~ .widget {
+.widget~.widget {
   margin-top: 0;
 }
+
 @media (min-width: 52.5em) {
   .single-promo {
     padding: 0 4.8rem;
@@ -686,6 +728,7 @@ a:hover {
     justify-content: center;
   }
 }
+
 .single-promo__container {
   display: flex;
   flex-flow: column wrap;
@@ -698,6 +741,7 @@ a:hover {
     flex-direction: row;
   }
 }
+
 @media (min-width: 52.5em) {
   .single-promo__promo-container {
     display: flex;
@@ -714,6 +758,7 @@ a:hover {
     margin-bottom: 0;
   }
 }
+
 .single-promo__promo-image {
   position: relative;
   width: 100%;
@@ -727,9 +772,11 @@ a:hover {
     max-height: 40rem;
   }
 }
+
 .single-promo__promo-image img {
   border-radius: 0.4rem;
 }
+
 .object-fit-cover-picture__img {
   height: 100%;
   display: block;
@@ -756,6 +803,7 @@ a:hover {
     line-height: 4rem;
   }
 }
+
 .single-promo__promo-title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #171c21;
@@ -770,6 +818,7 @@ a:hover {
     line-height: 3rem;
   }
 }
+
 .single-promo__promo-description {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: -0.04em;
@@ -822,10 +871,12 @@ a:hover {
   width: 8.8rem;
   height: 4.8rem;
 }
+
 .footer-sponsors__container {
   border-top: 0.1rem solid #ececec;
   padding-top: 1.6rem;
 }
+
 .footer-sponsors__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -835,6 +886,7 @@ a:hover {
   text-align: center;
   margin-bottom: 0.8rem;
 }
+
 .footer-sponsors__list {
   display: flex;
   flex-flow: row wrap;
@@ -847,6 +899,7 @@ a:hover {
     height: 8.6rem;
   }
 }
+
 .footer-sponsors__sponsor {
   display: flex;
   align-items: center;
@@ -870,6 +923,7 @@ a:hover {
     gap: 4rem;
   }
 }
+
 .footer__menu-container {
   justify-content: center;
   border-top: 0.1rem solid #ececec;
@@ -881,9 +935,11 @@ a:hover {
     margin: 0 3rem;
   }
 }
+
 .footer__menu-section {
   position: relative;
 }
+
 .footer__menu-title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -891,11 +947,13 @@ a:hover {
   line-height: 1.6rem;
   margin-bottom: 1.6rem;
 }
+
 .footer__menu-list {
   display: flex;
   flex-flow: column;
   gap: 1.6rem;
 }
+
 .footer__menu-link {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -903,11 +961,13 @@ a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.56);
 }
+
 @media (min-width: 52.5em) {
   .footer__copyright {
     padding: 1.6rem 4.8rem;
   }
 }
+
 .footer__copyright {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -921,6 +981,7 @@ a:hover {
 .active {
   display: block !important;
 }
+
 .in-active {
   display: none;
 }
@@ -939,12 +1000,11 @@ a:hover {
     border-bottom: 0.05rem solid rgba(51, 56, 62, 0.5);
   }
 }
+
 .tabs {
-  background: radial-gradient(
-    96.8% 493.26% at 100% 93.41%,
-    rgba(254, 11, 7, 0.219) 0,
-    rgba(148, 4, 1, 0) 100%
-  );
+  background: radial-gradient(96.8% 493.26% at 100% 93.41%,
+      rgba(254, 11, 7, 0.219) 0,
+      rgba(148, 4, 1, 0) 100%);
   padding-left: 0;
   padding-right: 0;
   z-index: 10;
@@ -957,6 +1017,7 @@ a:hover {
     padding-right: 4.8rem;
   }
 }
+
 @media (min-width: 40em) {
   .tabs__list--center {
     overflow-x: auto;
@@ -978,15 +1039,18 @@ a:hover {
   right: 50%;
   transform: translate(50%);
 }
+
 .tabs__link.is-active {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
 }
+
 @media (min-width: 52.5em) {
   .tabs__link {
     font-size: 2rem;
   }
 }
+
 .tabs__link {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serifS;
   cursor: pointer;
@@ -1000,6 +1064,7 @@ a:hover {
   text-align: center;
   white-space: nowrap;
 }
+
 .tabs__link::after {
   position: absolute;
   background-image: url(https://www.motogp.com/resources/v7.7.1/i/svg-files/elements/tab-underline.svg);
@@ -1013,7 +1078,7 @@ a:hover {
   height: 0;
 }
 
-.tabs__item + .tabs__item {
+.tabs__item+.tabs__item {
   margin-left: 4rem;
 }
 
@@ -1022,11 +1087,9 @@ a:hover {
 }
 
 .profile-tabs .tabs {
-  background: radial-gradient(
-    96.8% 493.26% at 100% 93.41%,
-    rgb(69, 17, 16) 0,
-    rgb(0, 0, 0) 100%
-  );
+  background: radial-gradient(96.8% 493.26% at 100% 93.41%,
+      rgb(69, 17, 16) 0,
+      rgb(0, 0, 0) 100%);
 }
 
 .tabs__tab-content--grey {
@@ -1046,6 +1109,7 @@ a:hover {
     height: 2.6rem;
   }
 }
+
 h2.widget-header__title::before {
   display: flex;
   position: relative;
@@ -1060,6 +1124,7 @@ h2.widget-header__title::before {
     font-size: 3.7rem;
   }
 }
+
 h2.widget-header__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
@@ -1067,11 +1132,13 @@ h2.widget-header__title {
   gap: 0.4rem;
   text-transform: capitalize;
 }
+
 @media (min-width: 52.5em) {
   .widget-header__title {
     flex: none;
   }
 }
+
 .widget-header__title {
   order: 1;
 }

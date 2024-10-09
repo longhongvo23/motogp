@@ -1,6 +1,6 @@
 const { pool } = require('../config/database')
 
-const getAllMotoGPTeam = async () => {
+const getAllTeam = async () => {
     try {
         const [results] = await pool.query(`SELECT * FROM teams`);
         return results; // Trả về kết quả sau khi query thành công
@@ -11,5 +11,5 @@ const getAllMotoGPTeam = async () => {
 
 
 module.exports = {
-    getAllMotoGPTeam
+    getAllTeam
 }

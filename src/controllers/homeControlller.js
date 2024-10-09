@@ -17,15 +17,11 @@ const getRiderTeam = async (req, res) => {
 
     return (res.render('rider-team'))
 }
-const getTeam = async (req, res) => {
-    let results = await getAllTeam();
-    return results;
-}
 const getRiderDetail = (req, res) => {
     res.render('rider-detail.ejs')
 }
 
 
 module.exports = {
-    getHomepage, getCalendar, getResultStanding, getRiderTeam, getRiderDetail, getTeam
+    getHomepage, getCalendar, getResultStanding, getRiderTeam, getRiderDetail
 }

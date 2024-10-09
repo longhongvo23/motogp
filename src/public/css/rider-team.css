@@ -3,18 +3,18 @@
     gap: 5rem;
   }
 }
+
 .rider-header {
   display: flex;
   flex-flow: row nowrap;
   position: relative;
   width: 100%;
   background: #000;
-  background-image: radial-gradient(
-    96.8% 493.26% at 100% 93.41%,
-    rgba(254, 11, 7, 0.219) 0,
-    rgba(148, 4, 1, 0) 100%
-  );
+  background-image: radial-gradient(96.8% 493.26% at 100% 93.41%,
+      rgba(254, 11, 7, 0.219) 0,
+      rgba(148, 4, 1, 0) 100%);
 }
+
 .rider-header__header {
   max-width: calc(100% - 5.6rem);
 }
@@ -24,11 +24,13 @@
     padding: 1.6rem 4.8rem 5rem;
   }
 }
+
 .rider-header__header .page-header {
   background: transparent;
 
   background-image: none;
 }
+
 .page-header {
   z-index: 200;
   width: 100%;
@@ -50,6 +52,7 @@
     line-height: 4.8rem;
   }
 }
+
 .page-header__title {
   letter-spacing: -0.02em;
 }
@@ -60,6 +63,7 @@
     z-index: 300;
   }
 }
+
 .rider-header__search {
   position: absolute;
   right: 0;
@@ -71,11 +75,13 @@
     margin: 2.2rem 4.8rem 5rem;
   }
 }
+
 @media (min-width: 40em) {
   .rider-search {
     width: 40rem;
   }
 }
+
 .rider-search {
   position: relative;
   height: 4rem;
@@ -90,6 +96,7 @@
     outline: none;
   }
 }
+
 .rider-search__button {
   position: absolute;
   right: 0;
@@ -119,6 +126,7 @@
   color: #fff;
   border: none;
 }
+
 .rider-grid__menu-item {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -134,14 +142,16 @@
   min-height: 3.8rem;
 }
 
-.rider-grid__supplier ~ div .rider-list__container {
+.rider-grid__supplier~div .rider-list__container {
   padding: 0;
 }
+
 @media (min-width: 64.0625em) {
   .rider-list__container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 .rider-list__container {
   display: grid;
   position: relative;
@@ -154,6 +164,7 @@
     height: 2.6rem;
   }
 }
+
 .rider-grid__title::before {
   display: flex;
   position: relative;
@@ -167,6 +178,7 @@
   margin-top: 3.2rem;
   grid-column: 1/-1;
 }
+
 @media (min-width: 52.5em) {
   .rider-grid__title {
     font-size: 3.7rem;
@@ -174,6 +186,7 @@
     margin-bottom: 3.2rem;
   }
 }
+
 .rider-grid__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 2.7rem;
@@ -191,6 +204,7 @@
     height: 42rem;
   }
 }
+
 .rider-list__rider {
   position: relative;
   display: flex;
@@ -207,6 +221,7 @@
   height: 100%;
   border-radius: 0.4rem;
 }
+
 .rider-list__background {
   min-height: 14.2rem;
   background-color: #171c21;
@@ -218,6 +233,7 @@
   transition: background-color 0.5s ease-in-out;
   opacity: 0.32;
 }
+
 .rider-list__background-team-colour {
   position: absolute;
   width: 100%;
@@ -229,120 +245,167 @@
 .aruba {
   background-color: rgb(20, 116, 189);
 }
+
 .aprilia {
   background-color: rgb(92, 179, 58);
 }
+
 .axxis {
   background-color: rgb(181, 249, 13);
 }
+
 .boe {
   background-color: rgb(209, 255, 24);
 }
+
 .cfmoto {
   background-color: rgb(0, 121, 132);
 }
+
 .cip {
   background-color: rgb(119, 210, 92);
 }
+
 .ducati {
   background-color: rgb(204, 0, 0);
 }
+
 .dynavolt {
   background-color: rgb(52, 73, 102);
 }
+
 .elf {
   background-color: rgb(104, 42, 56);
 }
+
 .honda {
   background-color: rgb(245, 245, 245);
 }
+
 .fantic {
   background-color: rgb(228, 3, 44);
 }
+
 .felo {
   background-color: rgb(249, 255, 0);
 }
+
 .gresini {
   background-color: rgb(157, 180, 217);
 }
+
 .gasgas {
   background-color: rgb(153, 7, 38);
 }
+
 .italtrans {
   background-color: rgb(16, 107, 169);
 }
+
 .klint {
   background-color: rgb(123, 220, 181);
 }
+
 .kopron {
   background-color: rgb(255, 224, 0);
 }
+
 .liqui {
   background-color: rgb(52, 73, 102);
 }
+
 .leopard {
   background-color: rgb(117, 203, 209);
 }
+
 .lcr-e {
   background-color: rgb(232, 70, 44);
 }
+
 .mlav {
   background-color: rgb(0, 161, 156);
 }
+
 .monster {
   background-color: rgb(12, 54, 140);
 }
+
 .mt {
   background-color: rgb(235, 147, 84);
 }
+
 .mta {
   background-color: rgb(254, 26, 139);
 }
+
 .onlyfans {
   background-color: rgb(10, 40, 163);
 }
+
+.fhmr {
+  background-color: rgb(254, 26, 139);
+}
+
 .ongetta {
   background-color: rgb(2, 150, 88);
 }
+
+.ihta {
+  background-color: rgb(10, 40, 163);
+}
+
 .openBank {
   background-color: rgb(18, 57, 181);
 }
+
 .pertamina {
   background-color: rgb(219, 255, 3);
 }
+
 .prima {
   background-color: rgb(130, 52, 194);
 }
+
 .preicanos {
   background-color: rgb(170, 239, 0);
 }
+
 .qjmotor {
   background-color: rgb(157, 180, 217);
 }
+
 .red-bull {
   background-color: rgb(255, 102, 0);
 }
+
 .repsol {
   background-color: rgb(255, 160, 15);
 }
+
 .rw {
   background-color: rgb(245, 245, 245);
 }
+
 .speed {
   background-color: rgb(240, 128, 25);
 }
+
 .sic58 {
   background-color: rgb(228, 35, 39);
 }
+
 .trackhouse {
   background-color: rgb(0, 102, 204);
 }
+
 .tech3 {
   background-color: rgb(169, 34, 22);
 }
+
 .yamaha {
   background-color: rgb(224, 255, 0);
 }
+
 .castrol,
 .idemitsu,
 .hrc,
@@ -356,6 +419,7 @@
     transform: translate(-50%, -40%);
   }
 }
+
 .rider-list__background-name {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 14.4rem;
@@ -373,6 +437,7 @@
 .rider-list__background-gradient::after {
   background: linear-gradient(180deg, rgba(23, 28, 33, 0), #171c21);
 }
+
 .rider-list__background-gradient::after,
 .rider-list__background-gradient::before {
   content: "";
@@ -385,9 +450,11 @@
   border-radius: 0.4rem;
   z-index: 1;
 }
+
 .rider-list__background-gradient::before {
   background: linear-gradient(270deg, transparent, #171c21 112%);
 }
+
 .rider-list__background-gradient {
   position: absolute;
   left: 0;
@@ -409,9 +476,11 @@
     border-radius: 0.4rem;
   }
 }
+
 .rider-list__image-container::after {
   display: block;
 }
+
 @media (min-width: 52.5em) {
   .rider-list__image-container {
     height: 35.2rem;
@@ -426,6 +495,7 @@
     width: 100%;
   }
 }
+
 .rider-list__image-container {
   display: flex;
   order: 3;
@@ -457,6 +527,7 @@
     border-radius: 0.4rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .rider-list__info-container {
     position: absolute;
@@ -466,6 +537,7 @@
     padding: 1.6rem 1.6rem 2.4rem;
   }
 }
+
 .rider-list__info-container {
   display: flex;
   flex-flow: column nowrap;
@@ -492,11 +564,13 @@
     font-size: 4rem;
   }
 }
+
 @media (min-width: 64.0625em) {
   .rider-list__info-name {
     margin-bottom: 1.2rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .rider-list__info-name {
     flex-flow: row wrap;
@@ -505,6 +579,7 @@
     z-index: 1;
   }
 }
+
 .rider-list__info-name {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1;
@@ -526,6 +601,7 @@
     max-width: none;
   }
 }
+
 .rider-list__details-country {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1.4rem;
@@ -557,24 +633,29 @@
     pointer-events: none;
   }
 }
+
 .rider-list__details-team::before {
   height: 100%;
 }
+
 @media (min-width: 52.5em) {
   .rider-list__details-team {
     line-height: 1;
   }
 }
+
 @media (min-width: 52.5em) {
   .rider-list__details-team {
     font-size: 1.6rem;
     max-width: none;
   }
 }
+
 .rider-list__details-team {
   gap: 0.8rem;
   min-width: 50%;
 }
+
 .rider-list__details-team {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 
@@ -601,6 +682,7 @@
     line-height: 3.7rem;
   }
 }
+
 .engine-supplier__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1rem;
@@ -631,6 +713,7 @@
     height: 2.6rem;
   }
 }
+
 .teams-grid__title::before {
   display: flex;
   position: relative;
@@ -639,6 +722,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 @media (min-width: 52.5em) {
   .teams-grid__title {
     font-size: 3.7rem;
@@ -646,6 +730,7 @@
     margin-bottom: 3.2rem;
   }
 }
+
 .teams-grid__title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -669,6 +754,7 @@
   color: #fff;
   border: none;
 }
+
 .teams-grid__menu-item {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.4rem;
@@ -684,11 +770,13 @@
     padding: 4.8rem 0;
   }
 }
+
 @media (min-width: 64.0625em) {
   .teams-list__container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 .teams-list__container {
   display: grid;
   position: relative;
@@ -700,10 +788,12 @@
     height: 38rem;
   }
 }
+
 .teams-list__team {
   border-radius: 0.4rem;
   background-color: #171c21;
 }
+
 .teams-list__team {
   position: relative;
   display: flex;
@@ -718,6 +808,7 @@
   height: 100%;
   min-height: 11.4rem;
 }
+
 .teams-list__background {
   border-radius: 0.4rem;
   background-color: #171c21;
@@ -732,6 +823,7 @@
   border-radius: 0.4rem;
   opacity: 0.32;
 }
+
 .teams-list__background-name {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -752,6 +844,7 @@
 .teams-list__background-gradient::after {
   background: linear-gradient(180deg, rgba(23, 28, 33, 0), #171c21);
 }
+
 .teams-list__background-gradient::after,
 .teams-list__background-gradient::before {
   content: "";
@@ -764,9 +857,11 @@
   border-radius: 0.4rem;
   z-index: 1;
 }
+
 .teams-list__background-gradient::before {
   background: linear-gradient(270deg, transparent, #171c21 112%);
 }
+
 .teams-list__background-gradient {
   position: absolute;
   left: 0;
@@ -788,6 +883,7 @@
     border-radius: 0.4rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .teams-list__image-container {
     width: 150%;
@@ -796,6 +892,7 @@
     margin: 0 auto;
   }
 }
+
 .teams-list__image-container {
   display: flex;
   order: 3;
@@ -810,6 +907,7 @@
     right: -3rem;
   }
 }
+
 .teams-list__image {
   width: 150%;
 }
@@ -819,6 +917,7 @@
     mask-image: none;
   }
 }
+
 .teams-list__image img {
   border-radius: 0.4rem;
 }
@@ -833,6 +932,7 @@
     border-radius: 0.4rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .teams-list__info-container {
     position: absolute;
@@ -840,6 +940,7 @@
     width: 100%;
   }
 }
+
 .teams-list__info-container {
   padding: 1.6rem;
   display: flex;
@@ -855,16 +956,19 @@
     font-size: 4rem;
   }
 }
+
 @media (min-width: 64.0625em) {
   .teams-list__info-name {
     margin-bottom: 1.2rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .teams-list__info-name {
     z-index: 1;
   }
 }
+
 .teams-list__info-name {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
@@ -885,6 +989,7 @@
     line-height: 1.8rem;
   }
 }
+
 @media (min-width: 52.5em) {
   .teams-list__riders-name {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -892,6 +997,7 @@
     font-size: 1.4rem;
   }
 }
+
 .teams-list__riders-name {
   color: #fff;
   opacity: 0.8;
