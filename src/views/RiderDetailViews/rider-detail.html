@@ -6,90 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/src/public/images/moto-gp.png" type="image/png">
     <link rel="stylesheet" href="../../public/css/main.css" />
-    <link rel="stylesheet" href="../../public/css/calender.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../public/css/rider-team.css" />
+    <link rel="stylesheet" href="../../public/css/rider-detail.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Calendar</title>
+    <title>rider details</title>
 </head>
 
 <body>
+    <!--main navbar-->
     <script src="../mainnavbar.js"></script>
-
-    <header class="calendar">
-        <div class="calendar__container">
-            <div class="calendar__header-container">
-                <div class="calendar__title-container">
-                    <h1 class="calendar__title">2024 Calendar</h1>
-                </div>
-                <div class="calendar__sponsor-container"></div>
-            </div>
-            <div class="calendar__submenu-container">
-                <ul class="calendar__submenu-list">
-                    <li class="calendar__submenu-item tickets">
-                        <a class="calendar__submenu-link external-link tickets"
-                            href="https://tickets.motogp.com/en/?utm_source=motogp.com&utm_medium=onpage&utm_campaign=ticketing&utm_content=calendar&_gl=1*mmbof2*_gcl_au*MTMyNjY2MTczLjE3Mjg1Mjg4MDU.*_ga*MTI0MjQzMTM3MS4xNzI4NTI4ODA1*_ga_0204YNR4C1*MTcyODUzMjc2NS4yLjEuMTcyODUzMjkxNi41OC4wLjA.&_ga=2.258420618.1604740506.1728528805-1242431371.1728528805"
-                            target="_blank" rel="noopener noreferrer">
-                            <!-- Icon Ticket -->
-                            <i class="fa-solid fa-ticket fa-2x">Tickets</i>
-                            <svg class="arrow">
-                                <i class="fa-solid fa-play"></i>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="calendar__submenu-item hospitality">
-                        <a class="calendar__submenu-link external-link tickets"
-                            href="https://motogppremier.motogp.com/hospitality?utm_source=motogp.com&utm_medium=partner_referral&utm_campaign=motogp_web_calendar_hospitality&_gl=1*1cgnzko*_gcl_au*MTMyNjY2MTczLjE3Mjg1Mjg4MDU.*_ga*MTI0MjQzMTM3MS4xNzI4NTI4ODA1*_ga_0204YNR4C1*MTcyODUzMjc2NS4yLjEuMTcyODUzMzk3MS41OS4wLjA.&_ga=2.255209352.1604740506.1728528805-1242431371.1728528805"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-flag-checkered fa-2x">Hospitality</i>
-                            <!-- Sử dụng class để tăng kích thước -->
-                            <svg class="arrow">
-                                <i class="fa-solid fa-play"></i>
-                            </svg>
-                        </a>
-
-                    </li>
-                    <li class="calendar__featured-cta">
-                        <a class="calendar__featured-cta-link calendar__featured-cta-link--one">
-                            <i class="fa-regular fa-calendar" style="color: #ffffff"></i>
-
-                            Next GP
-                        </a>
-                    </li>
-                    <li class="calendar__featured-cta">
-                        <a class="calendar__featured-cta-link calendar__featured-cta-link--two">
-                            <i class="fa-solid fa-cloud-arrow-down" style="color: #ffffff"></i>
-                            Calendar Download</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
+    <!--Main con tent-->
     <main id="main-content">
-        <div class="default-template">
-            <div class="calendar-listings__container">
-                <div class="calendar-listings__event-toggle">
-                    <button class="calendar-listings__event-toggle-btn active-btn"
-                        onclick="showCalendar('GrandPrix', this)">
-                        Grands Prix
-                    </button>
-                    <button class="calendar-listings__event-toggle-btn" onclick="showCalendar('AllEvents', this)">
-                        All Events
-                    </button>
-                </div>
-                <div style="margin-left: 5.8rem">
-                    <div class="wrap-calendar">
-                        <div id="GrandPrix" class="calendar-section active"></div>
-                        <div id="AllEvents" class="calendar-section"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="riderDetails" class="default-template"></div>
     </main>
 
-
+    <!--Footer-->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__logo-container">
@@ -290,7 +223,8 @@
             <div class="footer__copyright">© 2024 nhom 3</div>
         </div>
     </footer>
-    <script src="calendar.js" defer></script>
+
+    <script src="rider-detail.js"></script>
 </body>
 
 </html>

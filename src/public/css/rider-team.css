@@ -585,6 +585,7 @@
   line-height: 1;
   color: #fff;
   display: flex;
+  font-weight: bold;
 }
 
 .rider-list__details-container {

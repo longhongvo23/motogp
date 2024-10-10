@@ -38,7 +38,8 @@ function renderRiders(riders) {
     riders.forEach(rider => {
         const link = document.createElement("a");
         link.className = "rider-list__rider";
-        link.href = `rider-detail.html?rider_id=${rider.rider_id}`; // Thêm liên kết tới trang chi tiết nếu cần
+        link.href = `../RiderDetailViews/rider-detail.html?rider_id=${rider.rider_id}`;
+
 
         let backgroundClass = "rider-list__background-team-colour";
 
