@@ -35,7 +35,7 @@ function renderTeams(teams) {
     teams.forEach(team => {
         const link = document.createElement("a");
         link.className = "teams-list__team";
-        link.href = `rider-detail.html?team_id=${team.team_id}`; // Thêm liên kết tới trang chi tiết nếu cần
+        link.href = `../TeamDetailViews/team-detail.html?team_id=${team.team_id}`; // Thêm liên kết tới trang chi tiết nếu cần
 
         let backgroundClass = "teams-list__background-team-colour";
 

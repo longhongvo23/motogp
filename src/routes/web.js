@@ -18,6 +18,7 @@ router.get('/api/calendar', calendarController.getMotoGPCalendar)
 router.get('/api/teams', teamController.getTeam)
 router.get('/api/riders', riderController.getRider)
 router.get('/api/riders/:rider_id', riderController.getRiderDetails)
+router.get('/api/teams/:team_id', teamController.getTeamDetails)
 //router.get('/rider-team', getRiderTeam)
 //router.get('/rider-detail', getRiderDetail)
 
