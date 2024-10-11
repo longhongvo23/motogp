@@ -17,8 +17,7 @@ exports.getRider = async (req, res) => {
  * Lấy thông tin chi tiết của một tay đua dựa trên rider_id.
  */
 exports.getRiderDetails = async (req, res) => {
-    const riderId = parseInt(req.params.rider_id); // Chuyển đổi thành số
-    console.log(`Received riderId: ${riderId}`); // Log riderId nhận được
+    const riderId = parseInt(req.params.rider_id); // Chuyển đổi thành số // Log riderId nhận được
 
     try {
         const rider = await riderModels.getRiderById(riderId);
