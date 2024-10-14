@@ -15,22 +15,64 @@
 
 <body>
     <script src="../mainnavbar.js"></script>
+
     <div class="tabs-header">
         <nav class="tabs widget-outer-spacing">
             <ul class="tabs__list tabs__list--center">
                 <li class="tabs__item">
-                    <a class="tabs__link is-active" href="/src/views/ResultsViews/results.html">
+                    <a class="tabs__link is-active" href="./results.html">
                         <span class="tabs__link-text"> Results </span>
                     </a>
                 </li>
                 <li class="tabs__item">
-                    <a class="tabs__link" href="/src/views/StandingViews/standing.html">
+                    <a class="tabs__link" href="../StandingViews/standing.html">
                         <span class="tabs__link-text"> Standings </span>
                     </a>
                 </li>
             </ul>
         </nav>
     </div>
+
+    <div class="primary-filter">
+        <div class="primary-filter__filter-container">
+            <div class="primary-filter__filter-label">Year</div>
+            <select class="primary-filter__filter-select primary-filter__filter-select--year">
+                <!-- Options for year will be added dynamically from JavaScript -->
+            </select>
+        </div>
+
+        <div class="primary-filter__filter-container">
+            <div class="primary-filter__filter-label">Type</div>
+            <select class="primary-filter__filter-select primary-filter__filter-select--type">
+                <!-- Options for type will be added dynamically from JavaScript -->
+            </select>
+        </div>
+
+        <div class="primary-filter__filter-container">
+            <div class="primary-filter__filter-label">Event</div>
+            <select class="primary-filter__filter-select primary-filter__filter-select--event">
+                <!-- Options for event will be added dynamically from JavaScript -->
+            </select>
+        </div>
+
+        <div class="primary-filter__filter-container">
+            <div class="primary-filter__filter-label">Category</div>
+            <select class="primary-filter__filter-select primary-filter__filter-select--cat">
+                <!-- Options for category will be added dynamically from JavaScript -->
+            </select>
+        </div>
+
+        <div class="primary-filter__filter-container">
+            <div class="primary-filter__filter-label">Session</div>
+            <select class="primary-filter__filter-select primary-filter__filter-select--session">
+                <!-- Options for session will be added dynamically from JavaScript -->
+            </select>
+        </div>
+    </div>
+
+
+
+    <script src="results.js"></script>
 </body>
 
 </html>

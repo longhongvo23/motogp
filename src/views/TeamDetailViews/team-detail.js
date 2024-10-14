@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <div class="rider-image">
                             <div class="u-observed lazy-image-wrapper">
                                 <picture class="picture">
-                                    <img style="max-width: 53%"class="img undefined picture__img" src="${teamDetails.motoImg}" alt="${teamDetails.teamName}" />
+                                    <img style="max-width: 43%"class="img undefined picture__img" src="${teamDetails.motoImg}" alt="${teamDetails.teamName}" />
                                 </picture>
                             </div>
                         </div>
