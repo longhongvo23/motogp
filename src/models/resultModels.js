@@ -3,7 +3,7 @@ const { pool } = require('../config/database');
 // Hàm lấy danh sách tất cả tên sự kiện
 const getAllEventNames = async () => {
     try {
-        const query = `SELECT event_id, event_name FROM events;`; // Thêm event_id để có thể sử dụng
+        const query = `SELECT event_id, event_name FROM events;`;
         const [results] = await pool.query(query);
 
         return results.map(event => ({
@@ -19,7 +19,7 @@ const getAllEventNames = async () => {
 // Hàm lấy danh sách tất cả tên thể loại (category)
 const getAllCategories = async () => {
     try {
-        const query = `SELECT category_id, category_name FROM categories;`; // Thêm category_id
+        const query = `SELECT category_id, category_name FROM categories;`;
         const [results] = await pool.query(query);
 
         return results.map(category => ({
@@ -35,7 +35,7 @@ const getAllCategories = async () => {
 // Hàm lấy danh sách tất cả tên session
 const getAllSessions = async () => {
     try {
-        const query = `SELECT session_id, session_name FROM sessions;`; // Thêm session_id
+        const query = `SELECT session_id, session_name FROM sessions;`;
         const [results] = await pool.query(query);
 
         return results.map(session => ({
@@ -48,21 +48,45 @@ const getAllSessions = async () => {
     }
 };
 
-const filterResults = async (year, event, category, session) => {
+/**
+ * Hàm lọc kết quả dựa trên event_id, category_id và session_id
+ * @param {number} event - ID của sự kiện
+ * @param {number} category - ID của thể loại
+ * @param {number} session - ID của phiên
+ * @returns {Promise<Array>} - Trả về mảng kết quả lọc
+ * @throws {Error} - Ném lỗi nếu truy vấn cơ sở dữ liệu thất bại
+ */
+const filterResults = async (event, category, session) => {
     try {
         const query = `
-            SELECT * 
-            FROM results 
-            WHERE YEAR(date) = ? 
-            AND event_name = ? 
-            AND category_name = ? 
-            AND session_name = ?;
+            SELECT 
+                r.position AS pos,
+                r.points AS point,
+                rid.riderImg,
+                rid.rider_number AS bikeNumber,
+                rid.firstname AS firstName,
+                rid.lastname AS lastName,
+                c.flagImg AS flag,
+                t.teamName,
+                r.time_gap AS time
+            FROM results r
+            JOIN riders rid ON r.rider_id = rid.rider_id
+            JOIN countries c ON rid.country_id = c.country_id
+            JOIN teams t ON r.team_id = t.team_id
+            JOIN events e ON r.event_id = e.event_id
+            JOIN categories cat ON r.category_id = cat.category_id
+            JOIN sessions s ON r.session_id = s.session_id
+            WHERE e.event_id = ?
+              AND cat.category_id = ?
+              AND s.session_id = ?;
         `;
 
-        const [results] = await pool.query(query, [year, event, category, session]);
+        // Thực hiện truy vấn với các tham số event, category và session
+        const [results] = await pool.query(query, [event, category, session]);
 
         return results;
     } catch (error) {
+        console.error(`Database query failed: ${error.message}`);
         throw new Error(`Database query failed: ${error.message}`);
     }
 };

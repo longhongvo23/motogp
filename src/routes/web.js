@@ -24,9 +24,18 @@ router.get('/api/teams/:team_id', teamController.getTeamDetails)
 router.get('/api/standings/riders', standingController.getRiderStandings);
 router.get('/api/standings/teams', standingController.getTeamStandings);
 
+// Lấy danh sách tất cả tên sự kiện
 router.get('/api/result/event', resultController.getEventNames);
-router.get('/api/result/categori', resultController.getCategories);
+
+// Lấy danh sách tất cả tên thể loại
+router.get('/api/result/category', resultController.getCategories);
+
+// Lấy danh sách tất cả tên session
 router.get('/api/result/session', resultController.getSessions);
+
+// Lọc kết quả theo năm, sự kiện, thể loại và session (sử dụng GET)
+router.post('/api/result/filter', resultController.filterResults);
+
 //router.get('/rider-team', getRiderTeam)
 //router.get('/rider-detail', getRiderDetail)
 

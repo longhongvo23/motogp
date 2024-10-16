@@ -1,5 +1,6 @@
 const resultModels = require('../models/resultModels'); // Đảm bảo import đúng
 
+// Lấy danh sách tất cả tên sự kiện
 exports.getEventNames = async (req, res) => {
     try {
         const events = await resultModels.getAllEventNames();
@@ -9,6 +10,7 @@ exports.getEventNames = async (req, res) => {
     }
 };
 
+// Lấy danh sách tất cả tên thể loại
 exports.getCategories = async (req, res) => {
     try {
         const categories = await resultModels.getAllCategories();
@@ -18,6 +20,7 @@ exports.getCategories = async (req, res) => {
     }
 };
 
+// Lấy danh sách tất cả tên session
 exports.getSessions = async (req, res) => {
     try {
         const sessions = await resultModels.getAllSessions();
@@ -27,10 +30,11 @@ exports.getSessions = async (req, res) => {
     }
 };
 
+// Lọc kết quả theo năm, sự kiện, thể loại và session
 exports.filterResults = async (req, res) => {
-    const { year, event, category, session } = req.body;
+    const { event, category, session } = req.body;
     try {
-        const results = await resultModels.filterResults(year, event, category, session);
+        const results = await resultModels.filterResults(event, category, session);
         res.json(results);
     } catch (error) {
         res.status(500).json({ message: 'Error filtering results' });
