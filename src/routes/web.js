@@ -6,6 +6,8 @@ const riderController = require('../controllers/riderController')
 const calendarController = require('../controllers/callendarController')
 const standingController = require('../controllers/standingController')
 const resultController = require('../controllers/resultController')
+const teamManagerController = require('../controllers/teamManagerController');
+const riderManagerController = require('../controllers/riderManagerController');
 const router = express.Router()
 
 //HOME PAGE
@@ -36,7 +38,26 @@ router.get('/api/result/session', resultController.getSessions);
 // Lọc kết quả theo năm, sự kiện, thể loại và session (sử dụng GET)
 router.post('/api/result/filter', resultController.filterResults);
 
-//router.get('/rider-team', getRiderTeam)
-//router.get('/rider-detail', getRiderDetail)
+// TeamManager
+
+router.post('/api/createTeamManager', teamManagerController.createTeam);
+
+router.post('/api/deleteTeamManager', teamManagerController.deleteTeam);
+
+router.get('/api/teams/:team_id', teamManagerController.getTeamById);
+
+router.put('/api/teams/:teamId', teamManagerController.updateTeam);
+
+// Rider Manager
+
+router.get('/api/getAllRiders', riderManagerController.getAllRider)
+
+router.post('/api/createRiderManager', riderManagerController.createRider);
+
+router.post('/api/deleteRiderManager', riderManagerController.deleteRider);
+
+router.get('/api/rider/:rider_id', riderManagerController.getRiderById);
+
+router.put('/api/rider/:teamId', riderManagerController.updateRider);
 
 module.exports = router

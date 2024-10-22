@@ -1,39 +1,97 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/src/public/images/moto-gp.png" type="image/png">
-    <link rel="stylesheet" href="../../public/css/main.css" />
-    <link rel="stylesheet" href="../../public/css/rider-team.css" />
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+    <link rel="stylesheet" href="../../../public/css/rider-team.css" />
+    <link rel="stylesheet" href="../../../public/css/result-standing.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Team - MotoGP™</title>
+    <style>
+        .container {
+            max-width: 90%;
+            margin: 30px auto;
+        }
+
+        .add-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-left: 1%;
+        }
+
+        .delete-button {
+            background-color: #f5222d;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-left: 1%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 
 <body>
     <!--Main nav-->
-    <script src="../mainnavbar.js"></script>
+    <script src="../../mainnavbar.js"></script>
     <!--In ra danh sach-->
     <!--Rider, Team, Legend-->
     <div class="tabs-header">
         <nav class="tabs widget-outer-spacing">
             <ul class="tabs__list tabs__list--center">
                 <li class="tabs__item">
-                    <a class="tabs__link " href="/src/views/RiderViews/riders.html">
+                    <a class="tabs__link" href="/src/views/RiderViews/riders.html">
                         <span class="tabs__link-text"> Riders </span>
                     </a>
                 </li>
                 <li class="tabs__item">
-                    <a class="tabs__link  is-active" href="/src/views/TeamViews/teams.html">
+                    <a class="tabs__link" href="/src/views/TeamViews/teams.html">
                         <span class="tabs__link-text"> Teams </span>
                     </a>
                 </li>
                 <li class="tabs__item">
-                    <a class="tabs__link" href="/src/views/TeamManager/index/index.html">
+                    <a class="tabs__link  is-active" href="/src/views/TeamManager/index/index.html">
                         <span class="tabs__link-text">Team Manager</span>
                     </a>
                 </li>
@@ -46,29 +104,27 @@
         </nav>
     </div>
 
-    <!--Main-->
-    <div id="team" class="teams-grid__container active">
-        <div class="teams-grid__title">Teams</div>
-        <!--Type-->
-        <div class="rider-grid__menu-container">
-            <button class="rider-grid__menu-item active-rider-btn" onclick="showTeam('moto1', this)">
-                MotoGP™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto2', this)">
-                Moto2™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto3', this)">
-                Moto3™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('motoe', this)">
-                MotoE™
-            </button>
-        </div>
-        <div id="team-moto1" class="teams-grid__motogp active-rider">
-            <div id="teamList" class="teams-list__container">
-                <!-- Nội dung danh sách của bạn ở đây -->
-            </div>
-        </div>
+    <div class="container">
+        <button class="add-button" onclick="window.location.href='../create/index.html'">Create Team</button>
+        <button class="delete-button" onclick="deleteSelectedTeams()">Delete Team</button>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 5px;">Delete</th>
+                    <th style="width: 5px;">Edit</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">#</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">Name</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">BackgroundName</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">Image</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">Category</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">Rider 1</th>
+                    <th class="results-table__header-cell results-table__header-cell--time">Rider 2</th>
+                </tr>
+            <tbody id="teams-table-body">
+                <!-- Dữ liệu sẽ được thêm vào đây -->
+            </tbody>
+            </thead>
+        </table>
     </div>
 
     <!--Footer-->
@@ -273,7 +329,8 @@
         </div>
     </footer>
     <!--Script-->
-    <script src="teams.js"></script>
+    <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/91c8b57a30.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

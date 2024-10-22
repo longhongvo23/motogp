@@ -1,34 +1,93 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/src/public/images/moto-gp.png" type="image/png">
-    <link rel="stylesheet" href="../../public/css/main.css" />
-    <link rel="stylesheet" href="../../public/css/rider-team.css" />
+    <link rel="stylesheet" href="../../../public/css/main.css" />
+    <link rel="stylesheet" href="../../../public/css/rider-team.css" />
+    <link rel="stylesheet" href="../../../public/css/result-standing.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Team - MotoGP™</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #de3023;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #b5251b;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+    </style>
 </head>
 
 <body>
     <!--Main nav-->
-    <script src="../mainnavbar.js"></script>
+    <script src="../../mainnavbar.js"></script>
     <!--In ra danh sach-->
     <!--Rider, Team, Legend-->
     <div class="tabs-header">
         <nav class="tabs widget-outer-spacing">
             <ul class="tabs__list tabs__list--center">
                 <li class="tabs__item">
-                    <a class="tabs__link " href="/src/views/RiderViews/riders.html">
+                    <a class="tabs__link" href="/src/views/RiderViews/riders.html">
                         <span class="tabs__link-text"> Riders </span>
                     </a>
                 </li>
                 <li class="tabs__item">
-                    <a class="tabs__link  is-active" href="/src/views/TeamViews/teams.html">
+                    <a class="tabs__link" href="/src/views/TeamViews/teams.html">
                         <span class="tabs__link-text"> Teams </span>
                     </a>
                 </li>
@@ -37,8 +96,8 @@
                         <span class="tabs__link-text">Team Manager</span>
                     </a>
                 </li>
-                <li class="tabs__item">
-                    <a class="tabs__link" href="/src/views/RiderManager/index/index.html">
+                <li class="tabs__item  ">
+                    <a class="tabs__link is-active" href="/src/views/RiderManager/index/index.html">
                         <span class="tabs__link-text">Rider Manager</span>
                     </a>
                 </li>
@@ -46,30 +105,72 @@
         </nav>
     </div>
 
-    <!--Main-->
-    <div id="team" class="teams-grid__container active">
-        <div class="teams-grid__title">Teams</div>
-        <!--Type-->
-        <div class="rider-grid__menu-container">
-            <button class="rider-grid__menu-item active-rider-btn" onclick="showTeam('moto1', this)">
-                MotoGP™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto2', this)">
-                Moto2™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('moto3', this)">
-                Moto3™
-            </button>
-            <button class="rider-grid__menu-item" onclick="showTeam('motoe', this)">
-                MotoE™
-            </button>
-        </div>
-        <div id="team-moto1" class="teams-grid__motogp active-rider">
-            <div id="teamList" class="teams-list__container">
-                <!-- Nội dung danh sách của bạn ở đây -->
+    <div class="container">
+        <h2>Edit Rider</h2>
+        <form id="details">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Team Name:</label>
+                <input type="text" id="name" name="name" placeholder="Rider Name" required>
             </div>
-        </div>
+
+            <!-- BackgroundName -->
+            <div class="form-group">
+                <label for="backgroundName">Background Name:</label>
+                <input type="text" id="backgroundName" name="backgroundName" placeholder="Background Name" required>
+            </div>
+
+            <!-- Rider Image -->
+            <div class="form-group">
+                <label for="riderImage">Rider Image:</label>
+                <input type="text" id="riderImage" name="riderImage" placeholder="img" required>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+                <label for="hastag">Hastag:</label>
+                <input type="text" id="hastag" name="hastag" placeholder="hastag" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" placeholder="category" required>
+            </div>
+
+            <!-- Rider FirstName -->
+            <div class="form-group">
+                <label for="firstname">FirstName:</label>
+                <input type="text" id="riderFirstName" name="riderFirstName" placeholder="FirstName" required>
+            </div>
+
+            <!-- Rider LastName -->
+            <div class="form-group">
+                <label for="lastname">LastName:</label>
+                <input type="text" id="riderLastName" name="riderLastName" placeholder="Last Name" required>
+            </div>
+
+            <!-- Rider Country -->
+            <div class="form-group">
+                <label for="country_id">Country:</label>
+                <input type="text" id="riderCountry" name="riderCountry" placeholder="Country ID" required>
+            </div>
+
+            <!-- Rider Team -->
+            <div class="form-group">
+                <label for="rider_number">Team:</label>
+                <input type="text" id="riderTeam" name="riderTeam" placeholder="Team ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rider_number">Rider Number:</label>
+                <input type="text" id="rider_number" name="riderTeam" placeholder="Rider Number" required>
+            </div>
+
+            <!-- Nút submit -->
+            <button type="submit">Edit</button>
+        </form>
     </div>
+
 
     <!--Footer-->
     <footer class="footer">
@@ -273,7 +374,7 @@
         </div>
     </footer>
     <!--Script-->
-    <script src="teams.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
