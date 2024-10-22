@@ -82,6 +82,7 @@ function updateTeam(id) {
         .then(data => {
             console.log("Cập nhật rider thành công:", data);
             alert('Cập nhật thông tin rider thành công!');
+            window.location.href = "../index/index.html"
         })
         .catch(error => {
             console.error('Lỗi khi cập nhật đội:', error);
