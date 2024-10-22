@@ -44,9 +44,9 @@ router.post('/api/createTeamManager', teamManagerController.createTeam);
 
 router.post('/api/deleteTeamManager', teamManagerController.deleteTeam);
 
-router.get('/api/teams/:team_id', teamManagerController.getTeamById);
+router.get('/api/teammanage/:team_id', teamManagerController.getTeamById);
 
-router.put('/api/teams/:teamId', teamManagerController.updateTeam);
+router.put('/api/teammanageupdate/:teamId', teamManagerController.updateTeam);
 
 // Rider Manager
 

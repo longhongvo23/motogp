@@ -53,7 +53,7 @@ const deleteTeams = async (ids) => {
 // Thêm hàm để lấy thông tin team theo ID
 const getTeamById = async (teamId) => {
     const query = 'SELECT * FROM teams WHERE team_id = ?'; // Câu truy vấn để lấy team theo ID
-
+    console.log(query)
     try {
         const [rows] = await pool.query(query, [teamId]);
         // Trả về team nếu có
@@ -98,6 +98,6 @@ const updateTeam = async (teamId, teamData) => {
 module.exports = {
     createTeam,
     deleteTeams,
-    getTeamById, 
+    getTeamById,
     updateTeam,
 };

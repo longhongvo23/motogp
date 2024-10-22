@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (teamId) {
         getTeamById(teamId);  // Gọi hàm để lấy thông tin đội
     } else {
-        console.error('Không tìm thấy teamId trong URL');
+        console.error('Không tìm thấy riderID trong URL');
     }
 
     const form = document.getElementById('details');
@@ -24,12 +24,12 @@ function getTeamById(id) {
             return response.json();
         })
         .then(data => {
-            console.log("Thông tin đội nhận được từ API:", data);
+            console.log("Thông tin rider nhận được từ API:", data);
             displayTeamDetails(data);  // Gọi hàm để hiển thị thông tin đội
         })
         .catch(error => {
             console.error('Lỗi khi gọi API:', error);
-            alert('Có lỗi xảy ra khi tải thông tin đội.');
+            alert('Có lỗi xảy ra khi tải thông tin rider.');
         });
 }
 
@@ -54,17 +54,17 @@ function updateTeam(id) {
     const updatedData = {
         teamName: document.getElementById('name').value,
         backgroundName: document.getElementById('backgroundName').value,
-        riderImg : document.getElementById('riderImage').value,
-        riderHashtag : document.getElementById('hastag').value,
-        rider_type : document.getElementById('category').value,
-        firstname : document.getElementById('riderFirstName').value,
-        lastname : document.getElementById('riderLastName').value,
-        country_id : document.getElementById('riderCountry').value,
-        team_id : document.getElementById('riderTeam').value,
-        rider_number : document.getElementById('rider_number').value,
+        riderImg: document.getElementById('riderImage').value,
+        riderHashtag: document.getElementById('hastag').value,
+        rider_type: document.getElementById('category').value,
+        firstname: document.getElementById('riderFirstName').value,
+        lastname: document.getElementById('riderLastName').value,
+        country_id: document.getElementById('riderCountry').value,
+        team_id: document.getElementById('riderTeam').value,
+        rider_number: document.getElementById('rider_number').value,
     };
 
-    console.log('Dữ liệu cập nhật:', updatedData); 
+    console.log('Dữ liệu cập nhật:', updatedData);
 
     fetch(`http://localhost:3000/api/rider/${id}`, {
         method: 'PUT',
@@ -73,18 +73,18 @@ function updateTeam(id) {
         },
         body: JSON.stringify(updatedData),
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("Cập nhật đội thành công:", data);
-        alert('Cập nhật thông tin đội thành công!');
-    })
-    .catch(error => {
-        console.error('Lỗi khi cập nhật đội:', error);
-        alert('Có lỗi xảy ra khi cập nhật thông tin đội.');
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Cập nhật rider thành công:", data);
+            alert('Cập nhật thông tin rider thành công!');
+        })
+        .catch(error => {
+            console.error('Lỗi khi cập nhật đội:', error);
+            alert('Có lỗi xảy ra khi cập nhật thông tin rider.');
+        });
 }

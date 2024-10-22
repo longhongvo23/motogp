@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function getTeamById(id) {
-    fetch(`http://localhost:3000/api/teams/${id}`)
+    fetch(`http://localhost:3000/api/teammanage/${id}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -34,17 +34,14 @@ function getTeamById(id) {
 }
 
 function displayRiderDetails(data) {
-    document.getElementById('name').value = data.teamName || '';  // Tên đội
-    document.getElementById('backgroundName').value = data.backgroundName || '';  // Tên nền
-    document.getElementById('image').value = data.motoImg || '';  // Hình ảnh đội
-    document.getElementById('category').value = data.teamType || '';  // Danh mục (loại đội)
+    const team = data.team;
 
-    if (data.riders && data.riders.length > 0) {
-        document.getElementById('rider1').value = data.riders[0].name || '';  // Tên rider 1
-    }
-    if (data.riders && data.riders.length > 1) {
-        document.getElementById('rider2').value = data.riders[1].name || '';  // Tên rider 2
-    }
+    document.getElementById('name').value = team.teamName || '';  // Tên đội
+    document.getElementById('backgroundName').value = team.backgroundName || '';  // Tên nền
+    document.getElementById('image').value = team.motoImg || '';  // Hình ảnh đội
+    document.getElementById('category').value = team.team_type || '';  // Danh mục (loại đội)
+    document.getElementById('rider1').value = team.riderName1 || '';  // Tên rider 1
+    document.getElementById('rider2').value = team.riderName2 || '';  // Tên rider 2
 }
 
 function updateTeam(id) {
@@ -59,25 +56,27 @@ function updateTeam(id) {
         ]
     };
 
-    fetch(`http://localhost:3000/api/teams/${id}`, {
+    fetch(`http://localhost:3000/api/teammanageupdate/${id}`, {
         method: 'PUT', // Hoặc 'PATCH' nếu API của bạn hỗ trợ
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(updatedData),
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("Cập nhật đội thành công:", data);
-        alert('Cập nhật thông tin đội thành công!');
-    })
-    .catch(error => {
-        console.error('Lỗi khi cập nhật đội:', error);
-        alert('Có lỗi xảy ra khi cập nhật thông tin đội.');
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Cập nhật đội thành công:", data);
+
+            alert('Cập nhật thông tin đội thành công!');
+            window.location.href = "../index/index.html";
+        })
+        .catch(error => {
+            console.error('Lỗi khi cập nhật đội:', error);
+            alert('Có lỗi xảy ra khi cập nhật thông tin đội.');
+        });
 }
